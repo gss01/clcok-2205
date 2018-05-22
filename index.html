@@ -1,0 +1,80 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by gss01 (http://jsbin.com/sabehed/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<head>
+  <h1>This is the main headline of the article</h1>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Exo+2:100" rel="stylesheet" type="text/css">
+<style id="jsbin-css">
+html, body {
+  height: 100%;
+}
+* { margin: 0; padding: 0; }
+#clock {
+  text-align: center;
+  position: static;
+  bottom: -50%;
+  font-family: 'Exo 2', sans-serif;
+  font-size:50px;
+}
+font-family: 'Exo 2', sans-serif;
+
+document.body.style.background = hexColor;
+
+</style>
+</head>
+<body>
+<h2>This is a second level heading</h2>
+  
+<div id="clock"> 11:12:13 </div>
+<p>Here comes the first paragraph of text that describes what this article will be about. Its second sentence is so important it gets marked additionally.</p>
+
+<p><q>"Then comes a longer quotation from long ago that makes you think."</q></p>
+
+<p>In the second paragraph there is nothing interesting. But after the second paragraph there is an image of a tree.</p>
+
+<img src="http://i.imgur.com/k4EPvnQm.jpg"></img>
+
+    
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+
+  if (hours <= 9) {
+    hours = "0" + hours;
+  }
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = "0" + seconds;
+  }
+
+  var clockFace = hours + ':' + minutes + ':' + seconds;
+  var hexColor = '#' + hours + minutes + seconds;
+
+  document.getElementById('clock').innerHTML = clockFace;
+  document.body.style.background = hexColor;
+
+  setTimeout(function() {
+    colorClock();
+  }, 1000);
+}
+
+colorClock();
+
+
+</script>
+</body>
